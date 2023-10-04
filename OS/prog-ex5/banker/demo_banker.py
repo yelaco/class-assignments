@@ -3,7 +3,7 @@ from banker import Banker
 if __name__ == '__main__':
     num_process = 5
     num_resource = 3
-    Available = [10, 5, 7]
+    Available = [3, 3, 2]
     Max = [
         [7, 5, 3],
         [3, 2, 2],
@@ -25,10 +25,10 @@ if __name__ == '__main__':
         "Number of process doesn't match the number declared"
 
     banker = Banker(num_process, num_resource, Available, Max, Allocation)
-    requests = [
-        [1, 0, 2],
-        [3, 3, 0],
-        [0, 2, 0],
-    ]
+    requests = {
+        1: [1, 0, 2],
+        4: [3, 3, 0],
+        0: [0, 2, 0],
+    }
     banker.run(requests)
 
