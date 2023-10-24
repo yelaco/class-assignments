@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <style>
+            h2 {
+                text-align: center;
+            }
+
+            table {
+                margin: 0 auto;
+            }
+
+            textarea {
+                resize: none;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+            
+            th {
+                text-align: left;
+                padding-right: 100px;
+                padding-bottom: 10px;
+                font-weight: normal;
+            } 
+
+            .required_input {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>REGISTER FORM</h2>
+        <form action="" id="register_form">
+            <table>
+                <tr>
+                    <th>Full name</th>
+                    <th><input class="required_input" type="text" name="fullname"></th>
+                </tr>
+                <tr>
+                    <th><label>Address</label></th>
+                    <th><input type="text" name="address"></th>
+                </tr>
+                <tr>
+                    <th><label>Sex</label></th>
+                    <th>
+                        <input type="radio" id="male" name="choice">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="choice">
+                        <label for="female">Female</label>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label>Age</label></th>
+                    <th><input class="required_input" type="text" id="age" name="age" min="1"></th>
+                </tr>
+                <tr>
+                    <th><label>Email</label></th>
+                    <th><input class="required_input" type="text" id="email" name="email"></th>
+                </tr>
+                <tr>
+                    <th><label>Phone</label></th>
+                    <th><input type="text" id="phone" name="phone"></th>
+                </tr>
+                <tr>
+                    <th><label>Course</label></th>
+                    <th>
+                        <input type="checkbox" id="english" name="courses[]" value="English">
+                        <label for="english">English</label>
+                        <input type="checkbox" id="business" name="courses[]" value="Business">
+                        <label for="business">Business</label>
+                        <input type="checkbox" id="it" name="courses[]" value="IT">
+                        <label for="it">IT</label>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label>User Name</label></th>
+                    <th><input class="required_input" type="text" name="username"></th>
+                </tr>
+                <tr>
+                    <th><label>Password</label></th>
+                    <th><input class="required_input" type="password" name="password"></th>
+                </tr>
+                <tr>
+                    <th><label>Re-Password</label></th>
+                    <th><input class="required_input" type="password" name="re-password"></th>
+                </tr>
+                <tr>
+                    <th><label>Comment</label></th>
+                    <th><textarea id="comment" name="comment" rows="7"></textarea></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        <button>Submit</button>
+                        <button>Reset</button>
+                    </th>
+                </tr>
+            </table>        
+        </form>
+        
+    
+        <script src="inputform.js" async defer></script>
+    </body>
+</html>
