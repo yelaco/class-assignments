@@ -1,6 +1,87 @@
 # Network Analysis & Design
 
-## Khảo sát yêu cầu và điều tra hiện trạng mạng của khách hàng
+## I. Yêu cầu cho hệ thống và hiện trạng mạng
+
+### **1. Bối cảnh doanh nghiệp**
+
+Doanh nghiệp là một công ty thương mại điện tử đang phát triển nhanh chóng, với mục tiêu tăng trưởng người dùng gấp đôi trong vòng 2 năm tới. Hiện nay, hệ thống mạng đóng vai trò quan trọng trong việc đảm bảo trải nghiệm người dùng, bao gồm khả năng xử lý giao dịch nhanh, hệ thống AI thông minh và khả năng mở rộng để đáp ứng nhu cầu tăng trưởng.
+
+---
+
+### **2. Yêu cầu cho hệ thống mạng**
+
+#### **2.1. Hiệu suất và khả năng mở rộng**
+
+- **Tăng trưởng người dùng:** Mục tiêu tăng gấp đôi số lượng người dùng trong 2 năm tới.
+- **Độ trễ thấp:** Hệ thống cần có thời gian phản hồi nhanh và ổn định, đặc biệt trong các chiến dịch lớn và giờ cao điểm.
+- **Tăng cường băng thông:** Nhu cầu về băng thông cao hơn để đáp ứng số lượng truy cập lớn, đặc biệt khi chạy các chiến dịch giảm giá và quảng cáo trực tuyến.
+- **Tăng cường kết nối đa trung tâm:** Kế hoạch mở rộng thêm trung tâm dữ liệu tại khu vực miền Nam, yêu cầu kết nối ổn định giữa các trung tâm dữ liệu để đảm bảo tính sẵn sàng và an toàn dữ liệu.
+
+#### **2.2. Bảo mật và tuân thủ**
+
+- **Bảo mật giao dịch:** Doanh nghiệp cần bảo vệ thông tin giao dịch của khách hàng, yêu cầu mã hóa dữ liệu mạnh mẽ và bảo vệ hệ thống khỏi các cuộc tấn công mạng.
+- **Tuân thủ quy định:** Cần đảm bảo hệ thống mạng tuân thủ các quy định như **GDPR** (Bảo vệ dữ liệu cá nhân) và hướng tới đạt chuẩn bảo mật **ISO 27001**.
+- **Bảo vệ chống tấn công DDoS:** Hệ thống cần có giải pháp bảo vệ trước các cuộc tấn công từ chối dịch vụ (DDoS), đặc biệt trong những thời điểm doanh nghiệp chạy chiến dịch lớn, dễ bị tấn công.
+
+#### **2.3. Quản lý và tối ưu hóa tài nguyên**
+
+- **Quản lý băng thông:** Cần phân bổ và quản lý băng thông hiệu quả giữa các dịch vụ và bộ phận trong doanh nghiệp, tránh tình trạng tắc nghẽn.
+- **Giám sát mạng:** Hệ thống giám sát mạng cần được cải thiện để theo dõi hiệu suất theo thời gian thực và cảnh báo sớm các sự cố tiềm ẩn.
+- **Tự động hóa quản lý mạng:** Hệ thống cần tự động hóa trong việc phân bổ tài nguyên, phát hiện sự cố và xử lý nhằm giảm thiểu rủi ro và nâng cao hiệu quả hoạt động.
+
+#### **2.4. Hỗ trợ cho AI và IoT**
+
+- **AI và IoT:** Doanh nghiệp có kế hoạch tích hợp các công nghệ AI và IoT, yêu cầu hệ thống mạng phải hỗ trợ khả năng xử lý khối lượng lớn dữ liệu và cung cấp độ trễ thấp để đảm bảo tính thời gian thực.
+
+#### **2.5. Chi phí vận hành**
+
+- **Tối ưu hóa chi phí:** Chi phí vận hành mạng cần được tối ưu hóa, không chỉ tập trung vào việc giảm chi phí trực tiếp mà còn tối ưu hóa về lâu dài bằng cách cải thiện hiệu suất và sử dụng tài nguyên hợp lý.
+
+---
+
+### **3. Hiện trạng hạ tầng mạng**
+
+#### **3.1. Thiết bị mạng và kiến trúc**
+
+- **Thiết bị hiện tại:** Hệ thống đang sử dụng các thiết bị **Cisco** cho mạng nội bộ, VPN cho kết nối chi nhánh. Tuy nhiên, thiết bị hiện tại có thể chưa đủ đáp ứng cho nhu cầu tăng trưởng mạnh.
+- **Kết nối Internet:** Hiện tại doanh nghiệp chỉ sử dụng một ISP (Nhà cung cấp dịch vụ Internet) chính, không có dự phòng khi đường truyền gặp sự cố.
+- **Vấn đề tắc nghẽn:** Doanh nghiệp đang gặp phải tình trạng tắc nghẽn mạng trong các chiến dịch bán hàng lớn và giờ cao điểm, gây ảnh hưởng tới trải nghiệm khách hàng.
+
+#### **3.2. Bảo mật**
+
+- **Bảo mật hiện tại:** Mạng hiện tại có các biện pháp bảo mật cơ bản, nhưng thiếu các giải pháp bảo mật nâng cao như chống DDoS, hệ thống ngăn chặn và phát hiện xâm nhập (IDS/IPS), và kiểm soát truy cập mạnh mẽ.
+- **Rủi ro tấn công mạng:** Doanh nghiệp đang gặp rủi ro bị tấn công từ bên ngoài, đặc biệt là các cuộc tấn công DDoS hoặc xâm nhập trái phép.
+
+#### **3.3. Khả năng mở rộng**
+
+- **Khả năng mở rộng hạn chế:** Hiện tại, hệ thống mạng chưa được tối ưu hóa cho việc mở rộng theo nhu cầu tăng trưởng người dùng và quy mô kinh doanh. Mặc dù có kế hoạch mở trung tâm dữ liệu mới, nhưng hệ thống hiện tại có thể gặp khó khăn khi tích hợp và mở rộng.
+
+#### **3.4. Hiệu suất và quản lý**
+
+- **Quản lý băng thông:** Chưa có hệ thống phân bổ băng thông hiệu quả giữa các bộ phận và dịch vụ, dẫn đến hiện tượng thiếu hụt tài nguyên trong những lúc cao điểm.
+- **Giám sát và tối ưu hóa:** Hệ thống giám sát hiện tại chưa toàn diện, việc phát hiện và xử lý sự cố vẫn phụ thuộc nhiều vào quy trình thủ công, gây chậm trễ trong việc xử lý các vấn đề kỹ thuật.
+
+#### **3.5. Hỗ trợ AI và IoT**
+
+- **Hạ tầng chưa sẵn sàng:** Hệ thống mạng hiện tại chưa được tối ưu hóa cho việc tích hợp AI và IoT, khả năng xử lý dữ liệu lớn và độ trễ thấp vẫn còn hạn chế.
+
+#### **3.6. Chi phí vận hành**
+
+- **Chi phí cao:** Chi phí vận hành mạng hiện tại chiếm khoảng 30% tổng chi phí IT, và có nguy cơ gia tăng khi doanh nghiệp mở rộng hạ tầng và tăng số lượng người dùng.
+
+---
+
+### **4. Kết luận và đề xuất**
+
+Doanh nghiệp có nhu cầu cấp thiết về nâng cấp hạ tầng mạng để đáp ứng yêu cầu mở rộng quy mô, tăng cường bảo mật và tối ưu hóa chi phí. Cần triển khai các giải pháp mới về băng thông, kết nối đa ISP, SD-WAN, cũng như các công cụ bảo mật tiên tiến để bảo vệ hệ thống. Đồng thời, tự động hóa và tối ưu hóa trong quản lý mạng sẽ giúp doanh nghiệp giảm chi phí và nâng cao hiệu suất hoạt động.
+
+**Các bước tiếp theo:**
+
+- Lên kế hoạch nâng cấp hạ tầng mạng.
+- Cải thiện bảo mật và triển khai các giải pháp chống DDoS.
+- Tối ưu hóa chi phí bằng các giải pháp tự động hóa và tối ưu tài nguyên.
+
+## II. Khảo sát yêu cầu và điều tra hiện trạng mạng của khách hàng
 
 ---
 
@@ -166,7 +247,7 @@
 
 Với cách tiếp cận này, bên tư vấn sẽ dần đi từ khái quát đến chi tiết và rất chi tiết, nhằm hiểu rõ yêu cầu cụ thể của doanh nghiệp từ góc độ kinh doanh, công nghệ, bảo mật, và vận hành hạ tầng mạng.
 
-## Kết luận khảo sát yêu cầu
+## III. Kết luận khảo sát yêu cầu
 
 ### 1. **Mục tiêu kinh doanh và tăng trưởng**
 
@@ -222,7 +303,7 @@ Người tư vấn đã nắm được toàn diện yêu cầu và hiện trạn
 
 Những giải pháp này sẽ giúp doanh nghiệp đáp ứng tốt các yêu cầu về hiệu suất, bảo mật, và tính mở rộng trong tương lai.
 
-## Giải pháp chi tiết
+## IV. Giải pháp chi tiết
 
 Dưới đây là giải pháp chi tiết cho doanh nghiệp thương mại điện tử dựa trên những kết luận đã được rút ra từ cuộc trao đổi. Giải pháp sẽ bao gồm các yếu tố về hạ tầng mạng, bảo mật, quản lý băng thông, tối ưu hóa, và tự động hóa.
 
