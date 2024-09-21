@@ -1,0 +1,2 @@
+vào thư mục chứa file và chạy lệnh "python3 LRU.py"
+có thể chỉnh số lượng page frame từ 1 đến 7 trực tiếp trong mã nguồn
